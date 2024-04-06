@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Robbi automator",
+    "version": "0.2",
+    "description": "Automates Robbi.ai checking with figma",
+    "permissions": ["tabs", "scripting"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "host_permissions": ["https://*.robbi.ai/*", "https://*.figma.com/*"],
+    "externally_connectable": {
+        "matches": ["https://*.figma.com/*"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.figma.com/*"],
+            "js": ["figma-content.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["figma-inject.js"],
+            "matches": ["https://*.figma.com/*"]
+        }
+    ]
+}
