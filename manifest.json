@@ -1,9 +1,9 @@
 {
     "manifest_version": 3,
     "name": "Robbi automator",
-    "version": "0.2",
+    "version": "0.3",
     "description": "Automates Robbi.ai checking with figma",
-    "permissions": ["tabs", "scripting"],
+    "permissions": ["tabs", "scripting", "storage"],
     "action": {
         "default_popup": "popup.html"
     },
@@ -19,7 +19,7 @@
     ],
     "web_accessible_resources": [
         {
-            "resources": ["figma-inject.js"],
+            "resources": ["figma-inject-start.js", "figma-inject-stop.js"],
             "matches": ["https://*.figma.com/*"]
         }
     ]
