@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-//@ts-nocheck
-
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request: PopupMessageContent, sender, sendResponse) {
     if (request.type === 'start') {
         console.log('START');
         const { runtimeId } = request.payload;
@@ -14,7 +11,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         script.src = chrome.runtime.getURL('/figma/figma-inject-start.js');
 
         script.onload = function () {
-            this.remove();
+            script.remove();
         };
         (document.head || document.documentElement).appendChild(script);
     }
@@ -26,7 +23,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         script.src = chrome.runtime.getURL('/figma/figma-inject-stop.js');
 
         script.onload = function () {
-            this.remove();
+            script.remove();
         };
         (document.head || document.documentElement).appendChild(script);
     }
