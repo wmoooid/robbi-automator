@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+//@ts-nocheck
+
 (async () => {
     const runtimeId = sessionStorage.getItem('robbi-runtime-id');
 

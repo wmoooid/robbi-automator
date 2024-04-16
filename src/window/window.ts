@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+//@ts-nocheck
+
 document.addEventListener('DOMContentLoaded', () => {
     const image = document.querySelector('.check-image');
     const heading = document.querySelector('h3');
