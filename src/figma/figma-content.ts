@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request: PopupMessageContent, sender, sendResponse) {
     if (request.type === 'start') {
         console.log('START');
         const { runtimeId } = request.payload;
@@ -8,10 +8,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
         // Запускаем скрипт и удаляем после запуска
         const script = document.createElement('script');
-        script.src = chrome.runtime.getURL('figma-inject-start.js');
+        script.src = chrome.runtime.getURL('/figma/figma-inject-start.js');
 
         script.onload = function () {
-            this.remove();
+            script.remove();
         };
         (document.head || document.documentElement).appendChild(script);
     }
@@ -20,10 +20,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         console.log('STOP');
         // Запускаем скрипт и удаляем после запуска
         const script = document.createElement('script');
-        script.src = chrome.runtime.getURL('figma-inject-stop.js');
+        script.src = chrome.runtime.getURL('/figma/figma-inject-stop.js');
 
         script.onload = function () {
-            this.remove();
+            script.remove();
         };
         (document.head || document.documentElement).appendChild(script);
     }

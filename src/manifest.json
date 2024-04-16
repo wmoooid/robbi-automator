@@ -5,7 +5,7 @@
     "description": "Automates Robbi.ai checking with figma",
     "permissions": ["tabs", "scripting", "storage"],
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup/popup.html"
     },
     "host_permissions": ["https://*.robbi.ai/*", "https://*.figma.com/*"],
     "externally_connectable": {
@@ -14,12 +14,12 @@
     "content_scripts": [
         {
             "matches": ["https://*.figma.com/*"],
-            "js": ["figma-content.js"]
+            "js": ["figma/figma-content.js"]
         }
     ],
     "web_accessible_resources": [
         {
-            "resources": ["figma-inject-start.js", "figma-inject-stop.js"],
+            "resources": ["figma/figma-inject-start.js", "figma/figma-inject-stop.js"],
             "matches": ["https://*.figma.com/*"]
         }
     ]

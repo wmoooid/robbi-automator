@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "strict": true,
+        "typeRoots": ["./node_modules/@types", "./node_modules/@figma", "./node_modules/chrome-types"],
+        "outDir": "dist"
+    },
+    "include": ["src/**/*", "types/**/*"],
+    "exclude": ["node_modules/*", "dist/*"],
+    "paths": {
+        "*": ["types/*.d.ts"]
+    }
+}
